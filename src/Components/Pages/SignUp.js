@@ -2,8 +2,8 @@ import { useState } from "react";
 import { UseApiSignup } from "../Api";
 import { Form,Col,Container,Row,Button } from "react-bootstrap";
 import { Link,useNavigate } from "react-router-dom";
-import '../Pages/SignUp.css'
 import img from '../images/botImg.png'
+import '../Pages/SignUp.css'
 function SignUp(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -101,3 +101,4 @@ function SignUp(){
     </Container>
     )
 }
+export default SignUp
