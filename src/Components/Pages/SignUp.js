@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UseApiSignup } from "../Api";
+import { useSignupUserMutation } from "../Api";
 import { Form,Col,Container,Row,Button } from "react-bootstrap";
 import { Link,useNavigate } from "react-router-dom";
 import img from '../images/botImg.png'
@@ -8,7 +8,7 @@ function SignUp(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
-    const [signupUser, { isLoading, error }] = UseApiSignup();
+    const [signupUser, { isLoading, error }] = useSignupUserMutation();
     const navigate = useNavigate();
     const [image, setImage] = useState(null);
     const [upladingImg, setUploadingImg] = useState(false);
@@ -27,10 +27,10 @@ function SignUp(){
     async function uploadImage() {
         const data = new FormData();
         data.append("file", image);
-        data.append("upload_preset", "your-preset-here");
+        data.append("upload_preset", "iebaaju7");
         try {
             setUploadingImg(true);
-            let res = await fetch("https://api.cloudinary.com/v1_1/your-username-here/image/upload", {
+            let res = await fetch("https://api.cloudinary.com/v1_1/defjqh2fh/image/upload", {
                 method: "post",
                 body: data,
             });
@@ -59,9 +59,9 @@ function SignUp(){
     }
 
     return(
-        <Container>
+        <Container className="bg-primary">
         <Row>
-            <Col md={7} className="d-flex align-items-center justify-content-center flex-direction-column">
+            <Col  className="d-flex align-items-center justify-content-center flex-direction-column">
                 <Form style={{ width: "80%", maxWidth: 500 }} onSubmit={handleSignup}>
                     <h1 className="text-center">Create account</h1>
                     <div className="signup-profile-pic__container">
@@ -96,7 +96,7 @@ function SignUp(){
                     </div>
                 </Form>
             </Col>
-            <Col md={5} className="signup__bg"></Col>
+            {/* <Col md={5} className="signup__bg"></Col> */}
         </Row>
     </Container>
     )

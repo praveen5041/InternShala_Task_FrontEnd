@@ -2,7 +2,7 @@ import React from 'react'
 import { Col, Container, Form, Row, Button, Spinner } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import  { useContext, useState } from "react";
-import {UseApiLogin} from '../Api'
+import {useLoginUserMutation} from '../Api'
 import { ApiContext } from '../ApiContext';
 import '../Pages/Login.css'
 function Login() {
@@ -10,7 +10,7 @@ function Login() {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const { socket } = useContext(ApiContext);
-    const [loginUser, { isLoading, error }] = UseApiLogin();
+    const [loginUser, { isLoading, error }] = useLoginUserMutation();
     function handleLogin(e) {
         e.preventDefault();
         // login logic

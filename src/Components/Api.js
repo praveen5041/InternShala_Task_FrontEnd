@@ -5,7 +5,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const appApi = createApi({
     reducerPath: "appApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:5001",
+        baseUrl: "http://localhost:5000",
     }),
 
     endpoints: (builder) => ({
@@ -39,6 +39,6 @@ const appApi = createApi({
     }),
 });
 
-export const { UseApiLogin, UseApiSignup, UseApiLogout} = appApi;
+export const { useSignupUserMutation, useLoginUserMutation, useLogoutUserMutation } = appApi;
 
 export default appApi;

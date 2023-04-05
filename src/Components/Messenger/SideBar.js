@@ -4,10 +4,11 @@ import { Col, ListGroup, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { ApiContext } from '../ApiContext';
 import { addNotifications,resetNotifications } from './Slice';
+import '../Messenger/SideBar.css'
 function SideBar() {
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
-    const { socket, setMembers, members, setCurrentRoom, setRooms, privateMemberMsg, rooms, setPrivateMemberMsg, currentRoom } = useContext(AppContext);
+    const { socket, setMembers, members, setCurrentRoom, setRooms, privateMemberMsg, rooms, setPrivateMemberMsg, currentRoom } = useContext(ApiContext);
     function joinRoom(room, isPublic = true) {
         if (!user) {
             return alert("Please login");
@@ -38,7 +39,7 @@ function SideBar() {
     });
 
     function getRooms() {
-        fetch("http://localhost:5001/rooms")
+        fetch("http://localhost:5000/rooms")
             .then((res) => res.json())
             .then((data) => setRooms(data));
     }
