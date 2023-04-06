@@ -15,7 +15,7 @@ function Home() {
             <div>
                 <h1>share the world</h1>
                 <p>Connect with friends</p>
-                <LinkContainer to="/chat">
+                <LinkContainer to="/signup">
                 <Button variant="success">
                             Get Started <i className="fas fa-comments home-message-icon"></i>
                         </Button>

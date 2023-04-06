@@ -13,7 +13,7 @@ function SideBar() {
         if (!user) {
             return alert("Please login");
         }
-        socket.emit("join-room", room, currentRoom);
+         socket.emit("join-room", room, currentRoom);
         setCurrentRoom(room);
 
         if (isPublic) {
@@ -39,7 +39,7 @@ function SideBar() {
     });
 
     function getRooms() {
-        fetch("http://localhost:5000/rooms")
+        fetch("https://giveup.onrender.com/rooms")
             .then((res) => res.json())
             .then((data) => setRooms(data));
     }
