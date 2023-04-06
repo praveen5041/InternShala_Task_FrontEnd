@@ -1,5 +1,5 @@
 import React from 'react'
-import {Row,Col,Button} from "react-bootstrap"
+import {Row,Col,Button, Container} from "react-bootstrap"
 import {LinkContainer} from "react-router-bootstrap"
 import "../Pages/Home.css"
 import mail from '../images/email.png'
@@ -8,8 +8,9 @@ import linkedin from '../images/linkedin.png'
 
 function Home() {
   return (
-    <>
-     <Row>
+    <div className='main'>
+    <Container className='home'>
+      <Row>
         <Col md={6} className=" d-flex flex-direction-column align-items-center justify-content-center">
             <div>
                 <h1>share the world</h1>
@@ -22,7 +23,8 @@ function Home() {
             </div>
         </Col>
         <Col md={6} className="home__bg"></Col>
-     </Row>
+        </Row>
+        </Container>
      <div className="footer">
      <div className="social-icon">
        <a
@@ -61,7 +63,8 @@ function Home() {
        Copyright © 2023 Praveen Midathapally. All rights reserved.
      </h5>
    </div>
-   </>
+  
+   </div>
   )
 }
 

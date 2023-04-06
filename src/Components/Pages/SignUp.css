@@ -21,3 +21,25 @@
     object-fit: cover;
     height: 100px;
 }
+ .con{
+    background-color: #87b35b;
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+     
+}
+ 
+.text-muted{
+    text-decoration:whitesmoke;
+}
+.add-picture-icon {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    color: hsl(237, 76%, 55%);
+    background: white;
+    cursor: pointer;
+    z-index: 99;
+}

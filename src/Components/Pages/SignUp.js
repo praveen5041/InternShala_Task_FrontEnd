@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSignupUserMutation } from "../Api";
-import { Form,Col,Container,Row,Button } from "react-bootstrap";
+import { Form,Button } from "react-bootstrap";
 import { Link,useNavigate } from "react-router-dom";
 import img from '../images/botImg.png'
 import '../Pages/SignUp.css'
@@ -59,10 +59,8 @@ function SignUp(){
     }
 
     return(
-        <Container className="bg-primary">
-        <Row>
-            <Col  className="d-flex align-items-center justify-content-center flex-direction-column">
-                <Form style={{ width: "80%", maxWidth: 500 }} onSubmit={handleSignup}>
+        <div className="con">
+                <Form style={{ width: "80%", maxWidth: 500 }}  onSubmit={handleSignup}>
                     <h1 className="text-center">Create account</h1>
                     <div className="signup-profile-pic__container">
                         <img src={imagePreview || img} className="signup-profile-pic" />
@@ -72,14 +70,18 @@ function SignUp(){
                         <input type="file" id="image-upload" hidden accept="image/png, image/jpeg" onChange={validateImg} />
                     </div>
                     {error && <p className="alert alert-danger">{error.data}</p>}
-                    <Form.Group className="mb-3" controlId="formBasicName">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" placeholder="Your name" onChange={(e) => setName(e.target.value)} value={name} />
+                    <Form.Group className="mb-3" controlId="formFirstName">
+                        <Form.Label>First Name</Form.Label>
+                        <Form.Control type="text" placeholder="Enter First name" onChange={(e) => setName(e.target.value)} value={name} />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formLasttName">
+                        <Form.Label>Last Name</Form.Label>
+                        <Form.Control type="text" placeholder="Enter Last name" onChange={(e) => setName(e.target.value)} value={name} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} value={email} />
-                        <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
+                        {/* <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text> */}
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -95,10 +97,10 @@ function SignUp(){
                         </p>
                     </div>
                 </Form>
-            </Col>
+            
             {/* <Col md={5} className="signup__bg"></Col> */}
-        </Row>
-    </Container>
+        
+    </div>
     )
 }
 export default SignUp

@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 import {useLogoutUserMutation } from '../Api'
 import { useSelector } from 'react-redux'
 import logo from '../images/logo.png'
-
+ 
 function Navigation() {
     const user = useSelector((state) => state.user);
      const [logoutUser] = useLogoutUserMutation();
@@ -27,11 +27,11 @@ function Navigation() {
             <Nav className="ms-auto">
                 {!user && (
                     <LinkContainer to="/login">
-                        <Nav.Link color='white'>Login</Nav.Link>
+                        <Nav.Link >Login</Nav.Link>
                     </LinkContainer>
                 )}
                 <LinkContainer to="/chat">
-                    <Nav.Link>Chat</Nav.Link>
+                    <Nav.Link  >Chat</Nav.Link>
                 </LinkContainer>
                 {user && (
                     <NavDropdown
@@ -43,9 +43,9 @@ function Navigation() {
                         }
                         id="basic-nav-dropdown"
                     >
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                        {/* <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */}
 
                         <NavDropdown.Item>
                             <Button variant="danger" onClick={handleLogout}>
