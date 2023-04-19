@@ -15,7 +15,7 @@ function Navigation() {
         window.location.replace("/");
     }
   return (
-    <Navbar bg="secondary" expand="lg">
+    <Navbar bg="light" expand="lg">
     <Container>
         <LinkContainer to="/">
             <Navbar.Brand>

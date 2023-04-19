@@ -5,7 +5,6 @@ import "../Pages/Home.css"
 import mail from '../images/email.png'
 import github from '../images/github.png'
 import linkedin from '../images/linkedin.png'
-
 function Home() {
   return (
     <div className='main'>
